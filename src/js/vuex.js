@@ -3,14 +3,15 @@
 ///////////////////////////////////////////
 
 import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+export const store = createStore({
   plugins: [createPersistedState()],
-  state: {
+  state() {
+    return {
     // 0 = enter email or single signin
     // 1 = enter password
     // 2 = register user details
@@ -29,6 +30,7 @@ export default new Vuex.Store({
     hashed_password: null,
     // The Google clientId
     googleClientId: "861982955154-8dnmcg5ob5oih4af5ge0be64iv1mh9uv.apps.googleusercontent.com"
+    }
   },
   getters: {
     isLoggedIn: state => {
