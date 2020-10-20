@@ -3,7 +3,7 @@
 ///////////////////////////////////////////
 
 import { createRouter, createWebHistory } from 'vue-router'
-import { store } from '@/js/vuex'
+import store from '@/js/vuex'
 
 const router = createRouter({
   history: createWebHistory(),
