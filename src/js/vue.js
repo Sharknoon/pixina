@@ -3,7 +3,7 @@
 ///////////////////////////////////////////
 
 // Vue
-import Vue from 'vue'
+import { createApp } from 'vue'
 // Vue Router
 import router from '@/js/vue-router'
 //Pixina
@@ -15,10 +15,8 @@ import store from '@/js/vuex'
 
 Vue.config.productionTip = false
 
-new Vue({
-  el: '#app',
-  router: router,
-  render: h => h(Pixina),
-  vuetify,
-  store: store
-})
+createApp(Pixina)
+  .use(router)
+  .use(store)
+  .use(vuetify)
+  .mount('#app')
