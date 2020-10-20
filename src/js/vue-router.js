@@ -3,13 +3,13 @@
 ///////////////////////////////////////////
 
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter } from 'vue-router'
 import store from '@/js/vuex'
 
 Vue.use(VueRouter)
 
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -93,8 +93,8 @@ const router = new VueRouter({
       ]
     },
     {//Must be at the bottom, because of the asterix (*) path
-      path: '/not-found',
-      alias: '*',
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
       component: () => import('@/components/misc/NotFound.vue')
     },
   ]
