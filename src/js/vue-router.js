@@ -2,11 +2,8 @@
 //              Vue Router               //
 ///////////////////////////////////////////
 
-import Vue from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import store from '@/js/vuex'
-
-Vue.use(VueRouter)
+import { store } from '@/js/vuex'
 
 const router = createRouter({
   history: createWebHistory(),
