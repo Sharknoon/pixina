@@ -2,13 +2,10 @@
 //                Vuex                   //
 ///////////////////////////////////////////
 
-import Vue from 'vue'
 import { createStore } from 'vuex'
 import createPersistedState from "vuex-persistedstate";
 
-Vue.use(Vuex)
-
-export const store = createStore({
+export default const store = createStore({
   plugins: [createPersistedState()],
   state() {
     return {
