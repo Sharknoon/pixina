@@ -3,7 +3,7 @@
 ///////////////////////////////////////////
 
 import Vue from 'vue'
-import { createRouter } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import store from '@/js/vuex'
 
 Vue.use(VueRouter)
